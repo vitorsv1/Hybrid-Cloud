@@ -9,7 +9,6 @@ ip = os.getenv("mongoIP")
 addr = "mongodb://" + ip + ":27017/"
 #addr = "mongodb://localhost:27017"
 
-
 myclient = pymongo.MongoClient(addr) 
 mydb = myclient["mongoDatabase"]
 tarefasdb = mydb["tarefas"]
