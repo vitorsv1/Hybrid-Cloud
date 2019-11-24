@@ -1,13 +1,10 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from bson.objectid import ObjectId
-import sys
-import pymongo
-import os 
+import sys, pymongo os 
 
 ip = os.getenv("mongoIP")
 addr = "mongodb://" + ip + ":27017/"
-#addr = "mongodb://localhost:27017"
 
 myclient = pymongo.MongoClient(addr) 
 mydb = myclient["mongoDatabase"]
@@ -60,4 +57,5 @@ async def put_tarefa_id(id: str, tarefa: Task):
     
 @app.delete("/tarefa/{id}")
 async def delete_tarefa(id: str):
-    tarefasdb.remove( {"_id": ObjectId(id)} )
+    tarefasdb.remove( 
+        {"_id": ObjectId(id)})
