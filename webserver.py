@@ -31,7 +31,7 @@ async def health_check():
 
 #POST
 @app.post("/tarefa")
-async def post_tarefa(tarefa: tarefa):
+async def post_tarefa(tarefa: Tarefa):
     data = {
         "title": tarefa.title, 
         "description": tarefa.description}
@@ -39,7 +39,7 @@ async def post_tarefa(tarefa: tarefa):
 
 #PUT
 @app.put("/tarefa/{id}")
-async def put_tarefa_id(id: str, tarefa: tarefa):
+async def put_tarefa_id(id: str, tarefa: Tarefa):
     data = {
         "title": tarefa.title, 
         "description": tarefa.description}
