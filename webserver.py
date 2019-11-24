@@ -6,7 +6,7 @@ import json
 
 app = FastAPI()
 
-ip = os.getenv('instanceIP')
+ip = os.getenv('webserverIP')
 address = 'http://' + ip +':8000'
 
 class Tarefa(BaseModel):
