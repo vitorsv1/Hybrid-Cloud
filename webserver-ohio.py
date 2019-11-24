@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from bson.objectid import ObjectId
-import sys, pymongo os 
+import sys, pymongo, os 
 
 ip = os.getenv("mongoIP")
 addr = "mongodb://" + ip + ":27017/"
